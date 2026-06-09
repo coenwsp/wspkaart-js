@@ -1,17 +1,26 @@
 function loadWMSLayers(map) {
   const overlays = {};
 
-  WMS_LAYERS.forEach(layer => {
+  MAP_LAYERS.forEach(layer => {
 
-    const wmsLayer = L.tileLayer.wms(layer.url, {
-      layers: layer.layers,
-      format: layer.format,
-      transparent: true,
-      version: '1.3.0',
-      crs: L.CRS.EPSG3857
-    });
+    // ✅ standaard WMS
+    if (layer.type === "wms") {
 
-    overlays[layer.name] = wmsLayer;
+      const wmsLayer = L.tileLayer.wms(layer.url, {
+        layers: layer.layers,
+        format: layer.format,
+        transparent: true,
+        opacity: 0.6
+      });
+
+      overlays[layer.name] = wmsLayer;
+    }
+
+    // ✅ custom layer (al gebouwd)
+    if (layer.type === "custom") {
+      overlays[layer.name] = layer.layer;
+    }
+
   });
 
   return overlays;

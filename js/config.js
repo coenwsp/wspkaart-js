@@ -31,3 +31,11 @@ const MAP_LAYERS = [
   }
 
 ];
+
+
+const DEFAULT_VIEW = {
+  center: [52.1, 5.1],
+  zoom: 8
+};
+``
+

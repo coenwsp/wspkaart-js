@@ -1,11 +1,8 @@
-let drawnItems = new L.FeatureGroup();let drawnItems = new L.Feature drawnItems.addLayer(layer);
-
-  currentBBox = layer.getBounds();
-
-  console.log("BBOX:", currentBBox.toBBoxString());
-});
+// ✅ Feature group voor tekenen
+let drawnItems = new L.FeatureGroup();
 map.addLayer(drawnItems);
 
+// ✅ draw controls (alleen rechthoek/bbox)
 const drawControl = new L.Control.Draw({
   draw: {
     polygon: false,
@@ -21,11 +18,18 @@ const drawControl = new L.Control.Draw({
 
 map.addControl(drawControl);
 
+// ✅ bbox opslaan
 let currentBBox = null;
 
-// wanneer bbox getekend wordt
+// ✅ wanneer bbox wordt getekend
 map.on(L.Draw.Event.CREATED, function (e) {
+
   drawnItems.clearLayers();
 
   const layer = e.layer;
+  drawnItems.addLayer(layer);
 
+  currentBBox = layer.getBounds();
+
+  console.log("BBOX:", currentBBox.toBBoxString());
+});

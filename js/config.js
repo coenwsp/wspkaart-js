@@ -4,7 +4,7 @@ const MAP_LAYERS = [
     type: "wms",
     name: "AHN hoogte",
     url: "https://service.pdok.nl/rws/ahn/wms/v1_0",
-    layers: "ahn3_05m_dtm",
+    layers: "05m_dtm",
     format: "image/png",
     transparent: true,
     opacity: 0.6

@@ -1,13 +1,13 @@
-const map = L.map('map').setView(DEFAULT_VIEW.center, DEFAULT_VIEW.zoom);const map = L.map('map = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: 'OSM'
+// ✅ Maak kaart aan (DIT IS VERPLICHT)
+const map = L.map('map').setView(DEFAULT_VIEW.center, DEFAULT_VIEW.zoom);
+
+// ✅ Basemap (OSM)
+const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap'
 }).addTo(map);
 
-// laad WMS lagen
+// ✅ WMS lagen laden
 const overlayMaps = loadWMSLayers(map);
 
-// layer control
+// ✅ Layer control
 L.control.layers({ "OSM": osm }, overlayMaps).addTo(map);
-``
-
-// base layer
-

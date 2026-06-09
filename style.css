@@ -1,1 +1,17 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
 
+#map {
+  height: 100vh;
+}
+
+.toolbar {
+  position: absolute;
+  top: 10px;
+  left: 50px;
+  z-index: 1000;
+  background: white;
+  padding: 10px;
+}

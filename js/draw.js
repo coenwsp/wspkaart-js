@@ -1,15 +1,13 @@
-// ✅ Feature group voor tekenen
 let drawnItems = new L.FeatureGroup();
 map.addLayer(drawnItems);
 
-// ✅ draw controls (alleen rechthoek/bbox)
 const drawControl = new L.Control.Draw({
   draw: {
     polygon: false,
     polyline: false,
     marker: false,
     circle: false,
-    rectangle: true // ✅ alleen bbox
+    rectangle: true
   },
   edit: {
     featureGroup: drawnItems
@@ -18,10 +16,8 @@ const drawControl = new L.Control.Draw({
 
 map.addControl(drawControl);
 
-// ✅ bbox opslaan
 let currentBBox = null;
 
-// ✅ wanneer bbox wordt getekend
 map.on(L.Draw.Event.CREATED, function (e) {
 
   drawnItems.clearLayers();

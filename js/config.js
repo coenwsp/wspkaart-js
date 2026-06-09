@@ -1,15 +1,15 @@
 const MAP_LAYERS = [
 
-  // ✅ simpele WMS (zoals je had)
   {
     type: "wms",
     name: "AHN hoogte",
     url: "https://service.pdok.nl/rws/ahn/wms/v1_0",
     layers: "ahn3_05m_dtm",
-    format: "image/png"
+    format: "image/png",
+    transparent: true,
+    opacity: 0.6
   },
 
-  // ✅ advanced layer (provincies)
   {
     type: "custom",
     name: "G: Provincies",
@@ -24,7 +24,6 @@ const MAP_LAYERS = [
     )
   },
 
-  // ✅ gemeenten met labels (group)
   {
     type: "custom",
     name: "G: Gemeenten",
@@ -45,9 +44,3 @@ const MAP_LAYERS = [
   }
 
 ];
-
-// NIET aanpassen
-const DEFAULT_VIEW = {
-  center: [52.1, 5.1],
-  zoom: 8
-};

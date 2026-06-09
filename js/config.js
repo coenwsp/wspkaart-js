@@ -4,7 +4,7 @@ const WMS_LAYERS = [
   {
     name: "AHN hoogte",
     url: "https://service.pdok.nl/rws/ahn/wms/v1_0",
-    layers: "ahn3_05m_dtm",
+    layers: "dtm_05m",
     format: "image/png"
   },
   {

@@ -7,11 +7,9 @@ function exportData() {
 
   const bbox = currentBBox.toBBoxString();
 
-  // ✅ eerste layer gebruiken (later uitbreidbaar)
   const wmsUrl = WMS_LAYERS[0].url;
   const layerName = WMS_LAYERS[0].layers;
 
-  // ✅ GeoTIFF export (WMS)
   const geotiffUrl =
     `${wmsUrl}?service=WMS&request=GetMap` +
     `&layers=${layerName}` +
@@ -22,7 +20,6 @@ function exportData() {
 
   window.open(geotiffUrl);
 
-  // ✅ SHP export (WFS)
   const shpUrl =
     `${wmsUrl.replace('/wms', '/wfs')}?service=WFS&request=GetFeature` +
     `&typeName=${layerName}` +
@@ -31,3 +28,4 @@ function exportData() {
 
   window.open(shpUrl);
 }
+``

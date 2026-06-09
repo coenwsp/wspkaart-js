@@ -7,7 +7,8 @@ const MAP_LAYERS = [
     layers: "ahn3_05m_dtm",
     format: "image/png",
     transparent: true,
-    opacity: 0.6
+    opacity: 0.6,
+    minZoom: 6
   },
 
   {
